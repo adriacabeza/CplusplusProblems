@@ -2,19 +2,19 @@
 /*
 Entrada
 
-L’entrada comença amb un natural n, seguit de les n paraules que cal localitzar a la sopa de lletres. A continuació venen dos naturals a i b entre 1 i 20 que defineixen les mides de la sopa de lletres, seguits de les a× b lletres, totes majúscules.
+Lâ€™entrada comenÃ§a amb un natural n, seguit de les n paraules que cal localitzar a la sopa de lletres. A continuaciÃ³ venen dos naturals a i b entre 1 i 20 que defineixen les mides de la sopa de lletres, seguits de les aÃ— b lletres, totes majÃºscules.
 
 Sortida
 
-Per a cada paraula de l’entrada, cal escriure una línia amb el nombre de vegades que apareix horitzontalment (d’esquerra a dreta) i verticalment (de dalt cap a baix). Les paraules han de sortir ordenades decreixentment segons el nombre d’aparicions i, en cas d’empat, creixentment en ordre alfabètic. Seguiu el format dels exemples.
+Per a cada paraula de lâ€™entrada, cal escriure una lÃ­nia amb el nombre de vegades que apareix horitzontalment (dâ€™esquerra a dreta) i verticalment (de dalt cap a baix). Les paraules han de sortir ordenades decreixentment segons el nombre dâ€™aparicions i, en cas dâ€™empat, creixentment en ordre alfabÃ¨tic. Seguiu el format dels exemples.
 
 Pista
 
-Considereu usar un vector d’elements d’aquest tipus en el vostre programa:
+Considereu usar un vector dâ€™elements dâ€™aquest tipus en el vostre programa:
 
      struct Info {
          string par;
-         int num; // comptador d’aparicions
+         int num; // comptador dâ€™aparicions
      };
 */
 #include <iostream>
@@ -24,7 +24,7 @@ Considereu usar un vector d’elements d’aquest tipus en el vostre programa:
 
 using namespace std;
 
-//declaro dos noves estructures que són la de direcció i la posició
+//declaro dos noves estructures que sÃ³n la de direcciÃ³ i la posiciÃ³
 struct Dir {
 
          int x,y;};
@@ -34,7 +34,7 @@ struct Pos {
          int x,y;};
 
 struct Info { string par; 
-         int num; // comptador d’aparicions 
+         int num; // comptador dâ€™aparicions 
 };
 typedef vector<Info> output_info;
 
@@ -46,7 +46,7 @@ typedef vector<Info> output_info;
 typedef vector <char> Row;
 typedef vector <Row> Matrix;
 
-//funció que rep la Matriu, la paraula i una posició x,y(que vaig variant al main amb dos fors)
+//funciÃ³ que rep la Matriu, la paraula i una posiciÃ³ x,y(que vaig variant al main amb dos fors)
 
 bool found(const Matrix& M, string s, const Pos& p, const Dir& d){
          int f= M.size();
@@ -54,10 +54,10 @@ bool found(const Matrix& M, string s, const Pos& p, const Dir& d){
          int i=p.x;
          int j=p.y;
          int tam_s=s.size();
-    //comprovo a la posició si, o són diferents les lletres que són aquests ifs de sota
-     //comprovo si finalment la i i la j(posicións x i y) s han passat de la Matriu quan he anat fent això
-    //si no es dóna cap d'aquests casos retorno un true perquè vol dir que l'he trobat ;D
-                  for(int k=0;k<tam_s;++k) {
+    //comprovo a la posiciÃ³ si, o sÃ³n diferents les lletres que sÃ³n aquests ifs de sota
+     //comprovo si finalment la i i la j(posiciÃ³ns x i y) s han passat de la Matriu quan he anat fent aixÃ²
+    //si no es dÃ³na cap d'aquests casos retorno un true perquÃ¨ vol dir que l'he trobat ;D
+                  for(int k=0;k<tam_s;k++) {
                   if(i<f && j<c){
                            if (M[i][j] != s[k] && char(M[i][j]-'a'+'A')!= s[k])
                                     return false;
@@ -139,7 +139,7 @@ int main(){
             
                   Pos pos;
        
-                  for(int k=0; k<n;++k){
+                  for(int k=0; k<n;k++){
                   int count=0;
                         for (pos.x = 0; pos.x < f; ++pos.x) {
                                 for (pos.y = 0; pos.y < c; ++pos.y){
